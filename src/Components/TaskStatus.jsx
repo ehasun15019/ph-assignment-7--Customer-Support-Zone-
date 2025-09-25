@@ -1,4 +1,5 @@
 import React from 'react'
+import { toast } from 'react-toastify';
 
 const TaskStatus = ({ selectedCard, onComplete }) => {
   return (
@@ -20,7 +21,18 @@ const TaskStatus = ({ selectedCard, onComplete }) => {
             <p className='font-semibold'>{ticket.title}</p>
 
             <button
-              onClick={() => onComplete(ticket)} 
+              onClick={() => {
+                toast.success(`Ticket '${ticket.title}' marked as complete!`, {
+                  position: "top-right",
+                  autoClose: 2000,
+                  hideProgressBar: false,
+                  closeOnClick: true,
+                  pauseOnHover: true,
+                  draggable: true,
+                  progress: undefined,
+                });
+                onComplete(ticket);
+              }}
               className='bg-green-600 w-full text-white py-2 mt-3 rounded cursor-pointer'
             >
               Complete

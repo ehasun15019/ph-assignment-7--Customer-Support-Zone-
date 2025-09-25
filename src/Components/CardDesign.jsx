@@ -28,7 +28,7 @@ const CardDesign = ({ ticket, onClick }) => {
     }
 
     // Show toast notification
-    toast.success(`'${ticket.title}' is Pro`, {
+    toast.success(`'${ticket.title}' is Processing`, {
       position: "top-right",
       autoClose: 2000,
       hideProgressBar: false,
