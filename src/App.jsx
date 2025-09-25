@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Suspense } from 'react'
 import Navbar from './Components/Navbar'
 import Footer from './Components/Footer'
 import ProgressResolve from './Components/ProgressResolve'
@@ -20,7 +20,10 @@ const App = () => {
 
       <div className='px-12'>
         <ProgressResolve/>
-        <CustomerTicketStatus fetchTicketData={fetchTicketData}/>
+
+        <Suspense fallback={<span className="loading loading-spinner text-neutral"></span>}>
+          <CustomerTicketStatus fetchTicketData={fetchTicketData}/>
+        </Suspense>
       </div>
 
       <Footer/>

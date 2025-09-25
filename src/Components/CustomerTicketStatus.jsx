@@ -9,7 +9,7 @@ const CustomerTicketStatus = ({fetchTicketData}) => {
         <div>
             <h4 className='text-[1.1rem] font-semibold'>Customer Tickets</h4>
 
-           <div className="grid grid-cols-2 gap-4 mt-3 cursor-pointer">
+           <div className="grid grid-cols-2 gap-4 mt-3">
                 {ticketData.map((ticket) => (
                     <CardDesign key={ticket.id} ticket={ticket}/>
                 ))}

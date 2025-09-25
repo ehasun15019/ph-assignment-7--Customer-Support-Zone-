@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 const CardDesign = ({ ticket }) => {
 
@@ -17,12 +17,49 @@ const CardDesign = ({ ticket }) => {
         };
     };
 
+    // Click system for status updating and adding in task status start
+    const [status, setStatus] = useState(ticket.status)
+
+    const handleStatus = () => {
+        if(status === "open") {
+            setStatus ("In Progress")
+        }
+    }
+
+    const statusBgColorChange = () => {
+        if(status === "open") {
+            return "bg-green-300 text-green-800"
+        } 
+
+        if (status === "In Progress") {
+             return "bg-yellow-300 text-yellow-800"
+        }
+    }
+
+    const statusBallBgChange = () => {
+        if (status === "open") {
+            return "bg-green-600"
+        }
+
+        if(status === "In Progress") {
+            return "bg-yellow-500"
+        }
+    }
+    // Click system for status updating and adding in task status end
+
+
   return (
-    <div className="card w-96 bg-base-100 card-xs shadow-sm p-3">
+    <div className="card w-96 bg-base-100 card-xs shadow-sm p-3 cursor-pointer" onClick={handleStatus}>
       <div className="card-bodies">
         <div className='flex justify-between items-center w-full'>
           <h2 className="card-title flex-1">{ticket.title}</h2>
-          <p className='text-[0.9rem] bg-green-500 px-3 py-1 rounded-full'>{ticket.status}</p>
+
+          <div className={`${statusBgColorChange()} px-3 py-1 rounded-full flex gap-1.5 items-center justify-center`}>
+            <div className={`${statusBallBgChange()} w-[0.9rem] h-[0.9rem] rounded-full`}></div>
+
+            {/* handleStatus function for changing status and adding Task status */}
+            <p className='text-[0.9rem] font-semibold'>{status}</p>
+          </div>
         </div>
 
         <p className='text-[0.8rem] py-2 text-gray-400'>{ticket.description}</p>
