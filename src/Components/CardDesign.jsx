@@ -65,7 +65,7 @@ const CardDesign = ({ ticket, onClick }) => {
 
 
   return (
-    <div className="card w-96 bg-base-100 card-xs shadow-sm p-3 cursor-pointer" onClick={handleStatus}>
+    <div className="card w-79 md:w-96 bg-base-100 card-xs shadow-sm p-3 cursor-pointer" onClick={handleStatus}>
       <div className="card-bodies">
         <div className='flex justify-between items-center w-full'>
           <h2 className="card-title flex-1">{ticket.title}</h2>
@@ -80,7 +80,7 @@ const CardDesign = ({ ticket, onClick }) => {
 
         <p className='text-[0.8rem] py-2 text-gray-400'>{ticket.description}</p>
 
-        <div className="flex justify-between text-[0.8rem]">
+        <div className="flex flex-col md:flex-row justify-between text-[0.8rem]">
           <div className='flex gap-3'>
             <p>{ticket.number}</p>
             
