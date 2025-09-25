@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 
-const CardDesign = ({ ticket }) => {
+const CardDesign = ({ ticket, onClick }) => {
 
-    // conditional rendering for priority function
+    // conditional rendering for priority function start
     const getPriorityColor = (priority) => {
         if (priority === "High priority") {
             return "text-red-500 font-semibold"
@@ -16,6 +16,7 @@ const CardDesign = ({ ticket }) => {
             return "text-green-500 font-semibold"
         };
     };
+    // conditional rendering for priority function End
 
     // Click system for status updating and adding in task status start
     const [status, setStatus] = useState(ticket.status)
@@ -24,6 +25,9 @@ const CardDesign = ({ ticket }) => {
         if(status === "open") {
             setStatus ("In Progress")
         }
+
+        /* this onclick use for adding cards in "Task status" section */
+        onClick(ticket)
     }
 
     const statusBgColorChange = () => {

@@ -1,7 +1,14 @@
 import React from 'react'
 import { image } from '../assets/assets'
 
-const ProgressResolve = () => {
+const ProgressResolve = ({selectedCard}) => {
+    console.log(selectedCard);
+    
+
+ /* Count tickets dynamically start */
+ const inProgressCount = selectedCard.filter(t => t.status === "open").length;
+ /* Count tickets dynamically end */
+
   return (
     <div className="my-5 pt-10 grid grid-cols-1 md:grid-cols-2 gap-5">
         <div className="w-full md:w-[320px] lg:w-[620px] h-[200px] rounded-lg shadow-md relative overflow-hidden progress-card">
@@ -21,7 +28,7 @@ const ProgressResolve = () => {
                 {/* Content */}
                 <div className="relative z-10 flex flex-col justify-center items-center h-full text-white">
                     <p className="text-xl font-medium">In-Progress</p>
-                    <h3 className="text-5xl font-bold">0</h3>
+                    <h3 className="text-5xl font-bold">{inProgressCount}</h3>
                 </div>
         </div>
 

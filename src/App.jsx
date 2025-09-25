@@ -1,7 +1,6 @@
 import React, { Suspense } from 'react'
 import Navbar from './Components/Navbar'
 import Footer from './Components/Footer'
-import ProgressResolve from './Components/ProgressResolve'
 import CustomerTicketStatus from './Components/CustomerTicketStatus'
 
 // public data fetch
@@ -19,7 +18,6 @@ const App = () => {
       <Navbar/>
 
       <div className='px-12'>
-        <ProgressResolve/>
 
         <Suspense fallback={<span className="loading loading-spinner text-neutral"></span>}>
           <CustomerTicketStatus fetchTicketData={fetchTicketData}/>
