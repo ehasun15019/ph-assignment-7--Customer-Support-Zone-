@@ -2,6 +2,7 @@ import React, { Suspense } from 'react'
 import Navbar from './Components/Navbar'
 import Footer from './Components/Footer'
 import CustomerTicketStatus from './Components/CustomerTicketStatus'
+  import { ToastContainer } from 'react-toastify';
 
 // public data fetch
 const Data = async () => {
@@ -25,6 +26,8 @@ const App = () => {
       </div>
 
       <Footer/>
+
+      <ToastContainer />
     </div>
   )
 }

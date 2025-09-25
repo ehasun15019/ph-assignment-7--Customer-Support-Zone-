@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { toast } from 'react-toastify';
 
 const CardDesign = ({ ticket, onClick }) => {
 
@@ -21,14 +22,25 @@ const CardDesign = ({ ticket, onClick }) => {
     // Click system for status updating and adding in task status start
     const [status, setStatus] = useState(ticket.status)
 
-    const handleStatus = () => {
-        if(status === "open") {
-            setStatus ("In Progress")
-        }
-
-        /* this onclick use for adding cards in "Task status" section */
-        onClick(ticket)
+  const handleStatus = () => {
+    if(status === "open") {
+      setStatus ("In Progress")
     }
+
+    // Show toast notification
+    toast.success(`'${ticket.title}' is Pro`, {
+      position: "top-right",
+      autoClose: 2000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+    });
+
+    /* this onclick use for adding cards in "Task status" section */
+    onClick(ticket)
+  }
 
     const statusBgColorChange = () => {
         if(status === "open") {
