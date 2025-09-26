@@ -12,3 +12,40 @@ JSX is used for easy to access UI and more readable
 
         const name = "Ehasun";
         const element = <h1>Hello, {name}!</h1>;
+
+
+Q2. What is the difference between State and Props?
+
+<table border="1" cellpadding="10" cellspacing="0">
+  <tr>
+    <th>Feature</th>
+    <th>Props</th>
+    <th>State</th>
+  </tr>
+  <tr>
+    <td>Definition</td>
+    <td>Data passed from parent to child component</td>
+    <td>Data managed inside the component</td>
+  </tr>
+  <tr>
+    <td>Who owns it?</td>
+    <td>Parent component</td>
+    <td>The component itself</td>
+  </tr>
+  <tr>
+    <td>Can it be changed?</td>
+    <td>No (read-only)</td>
+    <td>Yes (can be updated with setState/useState)</td>
+  </tr>
+  <tr>
+    <td>Purpose</td>
+    <td>To pass data and configure a component</td>
+    <td>To store information that can change over time</td>
+  </tr>
+  <tr>
+    <td>Example</td>
+    <td><code>&lt;User name="Ehasun" /&gt;</code></td>
+    <td><code>const [count, setCount] = useState(0);</code></td>
+  </tr>
+</table>
+
