@@ -76,4 +76,31 @@ It's gives use tow things
         }
 
 
+Q4. How can you share state between components in React?
+
+Ans: If two components need the same state → put that state in their closest common parent.
+
+    Example: 
+
+        function Parent() {
+            const [count, setCount] = useState(0);
+
+            return (
+                <div>
+                <ChildA count={count} />
+                <ChildB setCount={setCount} />
+                </div>
+            );
+            }
+
+            function ChildA({ count }) {
+             return <p>Count is: {count}</p>;
+            }
+
+            function ChildB({ setCount }) {
+                return <button onClick={() => setCount(c => c + 1)}>Increase</button>;
+        }
+
+
+
 
