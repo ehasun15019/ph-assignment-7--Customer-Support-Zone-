@@ -102,5 +102,19 @@ Ans: If two components need the same state → put that state in their closest c
         }
 
 
+Q5. How is event handling done in React?
+
+Ans: React handles events similar to JavaScript, but with a few key differences.
+
+    Example: 
+
+        In html
+
+            <button onclick="handleClick()">Click</button>
+
+        In React 
+
+            <button onClick={handleClick}>Click</button>
+
 
 
