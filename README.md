@@ -49,3 +49,31 @@ Q2. What is the difference between State and Props?
   </tr>
 </table>
 
+
+Q3. What is the useState hook, and how does it work?
+
+Ans: useState is ReactHook. it's used for managed our state in our functional components
+
+when we use useState it should have a initial value. 
+It's gives use tow things 
+
+1. The current state value
+2. A function to update that value
+
+    Example: 
+
+        import { useState } from "react";
+
+        function Counter() {
+            const [count, setCount] = useState(0);
+
+            return (
+                <div>
+                <p>Count: {count}</p>
+                <button onClick={() => setCount(count + 1)}>Increase</button>
+                </div>
+            );
+        }
+
+
+
